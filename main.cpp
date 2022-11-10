@@ -10,9 +10,7 @@ double dt;
 
 int main() {
     sf::Clock clock;
-    deltaTime = clock.restart().asSeconds();
-    dt = deltaTime * 350000;
-    float speed = 0.5;
+    float speed = 1.55;
     img.loadFromFile("Player.png");
     texture.loadFromImage(img);
     spr.setTexture(texture);
@@ -25,8 +23,10 @@ int main() {
             if (event.type == sf::Event::Closed)
                 win.close();
         }
+        deltaTime = clock.restart().asSeconds();
+        dt = deltaTime*100;
         std::cout << "deltatime = " << dt << std::endl;
-        //Óïðàâëåíèå
+        //Ð£Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         {
             spr.move(0, -speed*dt);
